@@ -3,48 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ECHOFALL // Vertical Slice</title>
+    <title>AETHER DOMINION // 3D Strategy Slice</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="shell">
-      <header class="topbar">
-        <div>
-          <h1>ECHOFALL</h1>
-          <p class="tag">AAA droombeeld → speelbare kern</p>
+    <div id="app">
+      <canvas id="viewport"></canvas>
+
+      <aside class="hud left">
+        <h1>AETHER DOMINION</h1>
+        <p class="sub">3D Strategy + Management Prototype</p>
+        <div class="stats">
+          <p>Credits <span id="credits">0</span></p>
+          <p>Energy <span id="energy">0</span></p>
+          <p>Population <span id="population">0</span></p>
+          <p>Core HP <span id="coreHp">0</span></p>
+          <p>Wave <span id="wave">0</span></p>
         </div>
-        <div class="controls">
-          <button id="audioToggle" type="button">Audio: UIT</button>
-          <button id="restart" type="button">Nieuwe Run (R)</button>
+
+        <div class="actions">
+          <button id="buildTurret">Build Turret (120)</button>
+          <button id="buildHab">Build Habitat (90)</button>
+          <button id="boostEconomy">Overclock Economy (70)</button>
         </div>
-      </header>
 
-      <section class="stats" aria-label="spelerstatus">
-        <p>HP <span id="hp">100</span></p>
-        <p>Shield <span id="shield">50</span></p>
-        <p>Lvl <span id="level">1</span></p>
-        <p>XP <span id="xp">0</span></p>
-        <p>Wave <span id="wave">1</span></p>
-        <p>Score <span id="score">0</span></p>
-      </section>
+        <p class="tip">Camera: RMB drag rotate · Wheel zoom · WASD pan · Q/E yaw</p>
+      </aside>
 
-      <canvas id="game" width="960" height="540" aria-label="ECHOFALL arena"></canvas>
+      <aside class="hud right">
+        <h2>Command Log</h2>
+        <div id="log" class="log"></div>
+      </aside>
 
-      <section class="ability-bar" aria-label="abilities">
-        <div>
-          <strong>Dash (Shift)</strong>
-          <div class="meter"><div id="dashMeter" class="fill"></div></div>
-        </div>
-        <div>
-          <strong>Pulse Nova (Q)</strong>
-          <div class="meter"><div id="novaMeter" class="fill"></div></div>
-        </div>
-      </section>
+      <div id="overlay" class="overlay hidden">
+        <h2 id="overlayTitle">Mission Ended</h2>
+        <p id="overlayText"></p>
+        <button id="restart">Start New Campaign</button>
+      </div>
+    </div>
 
-      <p class="hint">WASD bewegen · Muis richten · Klik schieten · Shift dash · Q nova · R restart</p>
-      <p id="message" class="message">Run gestart. Elimineer de Echo Drones.</p>
-    </main>
-
-    <script src="game.js"></script>
+    <script type="module" src="game.js"></script>
   </body>
 </html>
