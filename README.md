@@ -2,90 +2,71 @@
 
 Je vroeg om hoog in te zetten: niet een simpel spelletje, maar denken als een **AAA-studio**.
 
-Dit project is daarom opgezet in twee lagen:
-
+Dit project is opgezet in twee lagen:
 1. **Droombeeld (north star):** de ultieme gamevisie.
 2. **Realistische start:** een speelbare vertical slice die technisch schaalbaar is.
 
 ---
 
-## 1) Droombeeld: de ultieme game
+## Wat is nu nieuw (art + audio polish)
 
-**Titel:** ECHOFALL  
-**Genre:** Cinematic Action RPG + Squad Tactics + Co-op / PvE live events  
-**Pijlers:**
-- Filmische combat met superstrakke controls
-- Wereld die reageert op keuzes (faction politics)
-- Skill-expression (movement, timing, buildcraft)
-- Community-endgame met raids/world bosses
+De vertical slice is nu visueel en auditief zwaar opgewaardeerd:
 
-Stel je een mix voor van:
-- gameplay-flow van snelle action games,
-- narrative impact van grote RPG’s,
-- en de social longevity van live-service events.
+### Art-upgrades
+- Meerdere achtergrondlagen met parallax sterrenveld.
+- Sterkere sci-fi color grading + glow/vignette post-effecten.
+- Screen shake + screen flash feedback op abilities/hits/events.
+- Betere material look via gradients (player/enemy/boss).
+- Projectile glow, impact particles en trail effects.
+- Meer cinematic HUD-presentatie.
+
+### Audio-upgrades (procedural, geen externe assets)
+- Dynamische synth soundtrack (real-time gegenereerd via WebAudio).
+- Event-based SFX:
+  - shoot
+  - enemy shoot
+  - dash
+  - nova
+  - hurt
+  - kill
+  - level up
+  - boss entrance
+  - victory / fail
+- Audio toggle in UI (`Audio: AAN/UIT`).
+
+> Audio start na eerste interactie (browser policy).
 
 ---
 
-## 2) Terugredeneren: wat is nu haalbaar?
-
-In plaats van meteen “alles”, starten we met een **vertical slice** die de kern bewijst:
-- Responsieve movement
-- Combat loop (schieten + dash + speciale ability)
-- AI enemies in waves
-- Mini-boss encounter
-- XP / levels / upgrades
-- Diegetische HUD met cooldowns en game state
-
-Dit is precies wat in deze repo staat.
-
----
-
-## 3) Wat je nu kunt spelen
-
-Deze build is een top-down combat prototype in canvas:
-- Beweeg als een “Vanguard” over een arena
-- Schiet op drones
-- Gebruik **Dash** en **Pulse Nova** slim op cooldown
-- Overleef waves en versla de boss
-- Verdien XP, level up en word sterker
-
-### Controls
+## Controls
 - **WASD / pijltjes:** bewegen
 - **Muis:** richten
 - **Linkermuisknop:** schieten
 - **Shift:** Dash
-- **Q:** Pulse Nova (area burst)
+- **Q:** Pulse Nova
 - **R:** Herstart run
+- **Audio knop:** audio aan/uit
 
 ---
 
-## 4) Waarom dit een goede AAA-start is
+## Waarom dit een goede AAA-start is
 
-De code is bewust opgesplitst in systemen in `game.js`:
-- state & progression
-- player ability systems
-- enemy spawning / scaling
-- collision + damage model
-- UI sync + cinematic messaging
+Deze build combineert:
+- combat feel,
+- readability,
+- emotionele feedback via audio/FX,
+- en systems die door te bouwen zijn naar faction politics + campaign + co-op.
 
-Met deze basis kunnen we iteratief doorgroeien naar:
-1. betere art/audio
-2. class system + talents
-3. map objectives
-4. co-op netcode
-5. content pipeline
+Precies wat je vroeg: geen concessie aan de droom, maar wel een realistische stap die nu al “presence” heeft.
 
 ---
 
-## 5) Runnen
-
-Open `index.html` direct in de browser,
-of run een server:
+## Runnen
+Open `index.html` direct in je browser,
+of run lokaal:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Ga daarna naar:
-
-`http://localhost:8000`
+Ga daarna naar `http://localhost:8000`.
