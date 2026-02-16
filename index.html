@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AETHER DOMINION // 3D Strategy Slice</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="viewport"></canvas>
+
+      <aside class="hud left">
+        <h1>AETHER DOMINION</h1>
+        <p class="sub">3D Strategy + Management Prototype</p>
+        <div class="stats">
+          <p>Credits <span id="credits">0</span></p>
+          <p>Energy <span id="energy">0</span></p>
+          <p>Population <span id="population">0</span></p>
+          <p>Core HP <span id="coreHp">0</span></p>
+          <p>Wave <span id="wave">0</span></p>
+        </div>
+
+        <div class="actions">
+          <button id="buildTurret">Build Turret (120)</button>
+          <button id="buildHab">Build Habitat (90)</button>
+          <button id="boostEconomy">Overclock Economy (70)</button>
+        </div>
+
+        <p class="tip">Camera: RMB drag rotate · Wheel zoom · WASD pan · Q/E yaw</p>
+      </aside>
+
+      <aside class="hud right">
+        <h2>Command Log</h2>
+        <div id="log" class="log"></div>
+      </aside>
+
+      <div id="overlay" class="overlay hidden">
+        <h2 id="overlayTitle">Mission Ended</h2>
+        <p id="overlayText"></p>
+        <button id="restart">Start New Campaign</button>
+      </div>
+    </div>
+
+    <script type="module" src="game.js"></script>
+  </body>
+</html>
