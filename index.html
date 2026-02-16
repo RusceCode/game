@@ -3,21 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sterrensprint</title>
+    <title>ECHOFALL // Vertical Slice</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="game-shell">
-      <h1>Sterrensprint</h1>
-      <p class="subtitle">Pak zoveel mogelijk sterren en ontwijk de rode asteroïden.</p>
-      <section class="hud">
-        <p>Score: <span id="score">0</span></p>
-        <p>Levens: <span id="lives">3</span></p>
-        <button id="restart" type="button">Opnieuw starten</button>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <h1>ECHOFALL</h1>
+          <p class="tag">AAA droombeeld → speelbare kern</p>
+        </div>
+        <button id="restart" type="button">Nieuwe Run (R)</button>
+      </header>
+
+      <section class="stats" aria-label="spelerstatus">
+        <p>HP <span id="hp">100</span></p>
+        <p>Shield <span id="shield">50</span></p>
+        <p>Lvl <span id="level">1</span></p>
+        <p>XP <span id="xp">0</span></p>
+        <p>Wave <span id="wave">1</span></p>
+        <p>Score <span id="score">0</span></p>
       </section>
-      <canvas id="game" width="640" height="400" aria-label="Sterrensprint speelveld"></canvas>
-      <p class="hint">Beweeg met ← → of A D, spring met spatie.</p>
+
+      <canvas id="game" width="960" height="540" aria-label="ECHOFALL arena"></canvas>
+
+      <section class="ability-bar" aria-label="abilities">
+        <div>
+          <strong>Dash (Shift)</strong>
+          <div class="meter"><div id="dashMeter" class="fill"></div></div>
+        </div>
+        <div>
+          <strong>Pulse Nova (Q)</strong>
+          <div class="meter"><div id="novaMeter" class="fill"></div></div>
+        </div>
+      </section>
+
+      <p class="hint">WASD bewegen · Muis richten · Klik schieten · Shift dash · Q nova · R restart</p>
+      <p id="message" class="message">Run gestart. Elimineer de Echo Drones.</p>
     </main>
+
     <script src="game.js"></script>
   </body>
 </html>
